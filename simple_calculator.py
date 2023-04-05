@@ -29,7 +29,6 @@ def sub(x,y): return x-y
 while True:
     op = input("input operation:")
     if op == "end":
-        print("Exit program") # "반복을 종료"
         break
     elif op == "+":
         num1,num2,ret = arithmetic_ops(add) # 정의된 함수 사용
