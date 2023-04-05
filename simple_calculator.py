@@ -22,7 +22,6 @@ def arithmetic_ops(op):
     return num1, num2, op(num1, num2)
 # +와 -는 함수로 정의한다
 # [fill this area] +와 -함수 정의
-#
 def add(x,y): return x+y
 def sub(x,y): return x-y
 
