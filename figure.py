@@ -15,49 +15,65 @@ class line:
     get_length, set_length 메소드를 제공한다.
     """
 
-    __length = 0
+    __width  = 0
+    __height = 0
 
-    def __init__(self,length):
+    def __init__(self,width, height):
         """
-        생성자 초기 length 값을 받는다.
-        length(int or float): 초기 선의 길이 값.
+        생성자 초기 width와 height 값을 입력.
+        Args:
+             width  (int or float): 초기 선의 가로 길이
+             height (int or float): 초기 선의 세로 길이
         """
-        self.__length = length
+        self.__width  = width
+        self.__height = height
 
-    def set_length(self,length):
+    def set_length(self,width, height):
         """
-        선의 길이를 수정한다.
-        length(int or float): 선의 길이를 수정한다.
+        선의 길이를 수정.
+        Args:
+             width  (int or float): 초기 선의 가로 길이
+             height (int or float): 초기 선의 세로 길이
         """
-        self.__length = length
+        self.__width  = width
+        self.__height = height
 
     def get_length(self):
         """
         객체가 저장하고 있는 선의 길이를 반환한다.
         returns: int or float: 수정하고자 하는 선의 길이입니다.
         """
-        return self.__length   
+        return self.__width, self.__height  
     
-def area_square(length):
+def area_rectangle(width, height):
     """
-    길이를 입력받아 정사각형의 넓이를 구하는 함수.
-    length (int or float): 한 변의 길이
-    returns: int or float: 정사각형의 넓이를 반환한다.
+    길이를 입력받아 직사각형의 넓이를 구하는 함수.
+    Args:
+        width  (int or float): 밑변의 길이
+        height (int or float): 높이의 길이
+    returns: int or float: 직사각형의 넓이를 반환한다.
     """
-    return length * length
+    if width <= 0 or height <= 0: raise ValueError
+    return width * height
 
-def area_circle(length):
+def area_ellipse(width, height):
     """
-    길이를 입력받아 원의 넓이를 구하는 함수.
-    length (int or float): 반지름의 길이
+    길이를 입력받아 타원의 넓이를 구하는 함수.
+    Args:
+        width  (int or float): 짧은쪽 반지름 길이
+        height (int or float): 긴쪽 반지름 길이
     returns: int or float: 원의 넓이를 반환한다.
     """
-    return length * length * math.pi
+    if width <= 0 or height <= 0: raise ValueError
+    return width * height * math.pi
 
-def area_regular_triangle(length):
+def area_right_triangle(width, height):
     """
-    길이를 입력받아 정삼각형의 넓이를 구하는 함수.
-    length(int or float): 한 변의 길이
-    returns: int or float: 정삼각형의 넓이를 반환한다.
+    길이를 입력받아 직각삼각형의 넓이를 구하는 함수.
+    Args:
+        width  (int or float): 밑변의 길이
+        height (int or float): 높이의 길이
+    returns: int or float: 직각각형의 넓이를 반환한다.
     """
-    return length * length * math.sqrt(3)/4      
+    if width <= 0 or height <= 0: raise ValueError
+    return width * height /2     
