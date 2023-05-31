@@ -2,7 +2,7 @@ import figure
 
 myline = figure.line(10, 20)
 
-width, height = myline.get_length
+width, height = myline.get_length()
 
 try:
     rectangle = figure.area_rectangle(width, height)
